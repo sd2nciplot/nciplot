@@ -1,0 +1,15 @@
+# object, module, library files
+*.o
+*.mod
+*.a
+
+# binaries
+src/nciplot
+bin/nciplot
+
+# emacs backups
+*~
+
+# examples directory
+nciplot_examples/
+

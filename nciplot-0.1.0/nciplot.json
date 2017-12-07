@@ -1,0 +1,55 @@
+{
+    "defaultMemoryPerNode": 256,
+    "defaultProcessorsPerNode": 20,
+    "name": "nciplot-mdehaven",
+    "version": "0.1.0",
+    "executionSystem": "hpc-tacc-maverick-mdehaven",
+    "executionType": "HPC",
+    "parallelism": "SERIAL",
+    "deploymentPath": "/apps/nciplot/nciplot-0.1.0",
+    "deploymentSystem": "data-tacc-work-mdehaven",
+    "label": "xplan",
+    "modules": ["load tacc-singularity/2.3.1"],
+    "shortDescription": "xplan",
+    "templatePath": "runner-template.sh",
+    "testPath": "tester.sh",
+    "tags": [],
+    "inputs": [{
+	"id": "data",
+	"value": {
+	    "default": "",
+	    "required": true,
+	    "visible": true
+	},
+	"semantics": {
+	    "ontology": [
+		"http://edamontology.org/format_1929"
+	    ],
+	    "minCardinality": 1,
+	    "maxCardinality": 1
+	},
+	"details": {
+	    "description": "Directory containing pdb files"
+	}
+    }],
+    "parameters": [{
+	"id": "output",
+	"value": {
+	    "order": 1,
+	    "required": true,
+	    "type": "string",
+	    "validator": "",
+	    "visible": true,
+	    "default": "output.csv"
+	},
+	"semantics": {
+	    "ontology": [
+		"xs:string"
+	    ]
+	},
+	"details": {
+	    "description": "Output file name"
+	}
+    }],
+    "outputs": []
+}

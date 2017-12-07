@@ -1,0 +1,11 @@
+{
+    "name": "nci-test",
+    "appId": "nciplot-mdehaven-0.1.0",
+    "archive": false,
+    "inputs": {
+	"data": "agave://data-tacc-work-mdehaven/maverick/nci_test_data"
+    },
+    "parameters": {
+	"output": "output.csv"
+    }
+}

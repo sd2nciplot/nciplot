@@ -1,0 +1,24 @@
+#/bin/bash
+
+usage="$(basename "$0") pdbdirectory csvpath -- Process pdb files to single csv."
+
+if [ "$#" -ne 2 ]; then
+    echo $usage
+    exit 1
+fi
+
+workingdir=$(readlink -f $1)
+csvfile=$2
+
+cd $workingdir
+
+nci.py --create .
+
+export OMP_NUM_THREADS=20
+
+for f in *.nci
+do
+    /nciplot-master/src/nciplot "$f" > /dev/null
+done
+
+data_prep_nci_integrations.py $workingdir $csvfile

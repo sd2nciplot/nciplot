@@ -1,0 +1,17 @@
+(16 Oct 2017)  To compile with openMP on fock, with ifort
+
+source /opt/intel/bin/compilervars.sh intel64
+
+(17 oct 2017)  May need to set number of OpenMP threads, e.g., 
+setenv OMP_NUM_THREADS 6
+
+REMEMBER:  
+export NCIPLOT_HOME=~/nciplot-data/
+
+
+Added a new keyword "SHORT" that suppresses all the long outputs and doesn't allocate big arrays, write dat or cube files, etc.
+
+[] A couple TODO items in the code; could be written in a more ideomatic way
+[x] It might be better to play with the OUTPUT flag, e.g., using an OUTPUT = -1 instead of 
+
+Added a new option to keyword "OUTPUT" = -1, that is equivalent to keyword SHORT
